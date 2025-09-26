@@ -1,0 +1,67 @@
+﻿@model MyFirstApplication.Models.ActivityReservation
+
+<h2>New Activity Reservation</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="OrganizationName"></label>
+        <input asp-for="OrganizationName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ActivityTitle"></label>
+        <input asp-for="ActivityTitle" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Venue"></label>
+        <input asp-for="Venue" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateNeeded"></label>
+        <input asp-for="DateNeeded" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TimeFrom"></label>
+        <input asp-for="TimeFrom" type="time" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TimeTo"></label>
+        <input asp-for="TimeTo" type="time" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Participants"></label>
+        <input asp-for="Participants" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Speaker"></label>
+        <input asp-for="Speaker" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PurposeObjective"></label>
+        <textarea asp-for="PurposeObjective" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EquipmentNeeded"></label>
+        <input asp-for="EquipmentNeeded" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NatureOfActivity"></label>
+        <input asp-for="NatureOfActivity" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SourceOfFunds"></label>
+        <input asp-for="SourceOfFunds" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

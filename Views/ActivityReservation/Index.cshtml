@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MyFirstApplication.Models.ActivityReservation>
+
+<h2>Activity Reservations</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">New Reservation</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Organization</th>
+            <th>Activity Title</th>
+            <th>Venue</th>
+            <th>Date Needed</th>
+            <th>Time</th>
+            <th>Speaker</th>
+            <th>Purpose</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OrganizationName</td>
+                <td>@item.ActivityTitle</td>
+                <td>@item.Venue</td>
+                <td>@item.DateNeeded.ToShortDateString()</td>
+                <td>@item.TimeFrom.ToShortTimeString() - @item.TimeTo.ToShortTimeString()</td>
+                <td>@item.Speaker</td>
+                <td>@item.PurposeObjective</td>
+            </tr>
+        }
+    </tbody>
+</table>

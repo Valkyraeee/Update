@@ -1,0 +1,72 @@
+﻿@model MyFirstApplication.Models.LockerRequest
+
+@{
+    ViewData["Title"] = "Locker Request Form";
+}
+
+<div class="container p-4 shadow-lg rounded bg-white">
+    <h2 class="text-center text-primary mb-4">LOCKER REQUEST FORM</h2>
+
+    <form asp-action="Index" method="post" enctype="multipart/form-data">
+        <div class="form-group mb-3">
+            <label asp-for="Name" class="form-label">NAME</label>
+            <input asp-for="Name" class="form-control" placeholder="Enter your full name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="IdNumber" class="form-label">ID NUMBER</label>
+            <input asp-for="IdNumber" class="form-control" placeholder="Enter your ID number" />
+            <span asp-validation-for="IdNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="LockerNumber" class="form-label">LOCKER NUMBER</label>
+            <input asp-for="LockerNumber" class="form-control" placeholder="Enter locker number" />
+            <span asp-validation-for="LockerNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Semester" class="form-label">SEMESTER</label>
+            <input asp-for="Semester" class="form-control" placeholder="e.g. Summer" />
+            <span asp-validation-for="Semester" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="ContactNumber" class="form-label">CONTACT NUMBER</label>
+            <input asp-for="ContactNumber" class="form-control" placeholder="09XXXXXXXXX" />
+            <span asp-validation-for="ContactNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="AttachedStudyLoad" class="form-label">ATTACHED STUDY LOAD AND REGISTRATION</label>
+            <input asp-for="AttachedStudyLoad" type="file" class="form-control" />
+            <span asp-validation-for="AttachedStudyLoad" class="text-danger"></span>
+        </div>
+
+        <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" id="termsCheck" required />
+            <label class="form-check-label" for="termsCheck">
+                I accept the Terms of Service
+            </label>
+        </div>
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-success px-5">Submit Request</button>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center mt-3">
+            <h5>APPROVER</h5>
+            <p class="mb-0"><i class="bi bi-check-circle-fill text-success"></i></p>
+            <p><strong>Engr. Jessie Flores</strong><br />Dept. Head/Dean<br /><em>APPROVED</em></p>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

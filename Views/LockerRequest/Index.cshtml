@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MyFirstApplication.Models.LockerRequest>
+
+@{
+    ViewData["Title"] = "Locker Requests";
+}
+
+<h2>Locker Requests</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">New Request</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>ID Number</th>
+            <th>Locker Number</th>
+            <th>Semester</th>
+            <th>Contact Number</th>
+            <th>Study Load</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.IdNumber</td>
+                <td>@item.LockerNumber</td>
+                <td>@item.Semester</td>
+                <td>@item.ContactNumber</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.AttachedStudyLoad))
+                    {
+                        <a href="@item.AttachedStudyLoad" target="_blank">View</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
